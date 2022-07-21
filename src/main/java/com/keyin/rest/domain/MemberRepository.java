@@ -11,4 +11,7 @@ import java.util.List;
 public interface MemberRepository extends JpaRepository<Member, Long> {
     public List<Member> findByLastName(@Param("last_name")String lastName);
     public List<Member> findByFirstName(@Param("first_name")String firstName);
+
+    public List<Member> findByFirstNameAndLastName(@Param("first_name")String firstName,
+                                                   @Param("last_name")String lastName);
 }

@@ -7,7 +7,8 @@ import java.util.List;
 @Entity
 public class Tournament {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "tournament_sequence", sequenceName = "tournament_sequence", allocationSize = 1, initialValue=11)
+    @GeneratedValue(generator = "tournament_sequence")
     private long id;
 
     private Date startDate;

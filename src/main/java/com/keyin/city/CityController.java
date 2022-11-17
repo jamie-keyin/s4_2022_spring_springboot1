@@ -1,11 +1,12 @@
 package com.keyin.city;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class CityController {
@@ -18,8 +19,28 @@ public class CityController {
     }
 
     @PostMapping("/city")
-    public void createCity(City city) {
+    public void createCity(@RequestBody City city) {
         repo.save(city);
+    }
+
+    @PutMapping("/city/{id}")
+    public void updateCity(@PathVariable String id, @RequestBody City city, HttpServletResponse response) {
+        Optional<City> returnValue = repo.findById(Long.parseLong(id));
+        City cityToUpdate;
+
+        if (returnValue.isPresent()) {
+            cityToUpdate = returnValue.get();
+
+            cityToUpdate.setName(city.getName());
+
+            repo.save(cityToUpdate);
+        } else {
+            try {
+                response.sendError(404, "City with id: " + city.getId() + " not found.");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
 }

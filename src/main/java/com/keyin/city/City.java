@@ -1,9 +1,7 @@
 package com.keyin.city;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class City {
@@ -13,6 +11,12 @@ public class City {
     private long id;
 
     private String name;
+
+    @OneToOne
+    private TownHall townHall;
+
+    @ManyToMany
+    private List<Citizen> citizens;
 
     public City() {
     }
@@ -31,5 +35,21 @@ public class City {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public TownHall getTownHall() {
+        return townHall;
+    }
+
+    public void setTownHall(TownHall townHall) {
+        this.townHall = townHall;
+    }
+
+    public List<Citizen> getCitizens() {
+        return citizens;
+    }
+
+    public void setCitizens(List<Citizen> citizens) {
+        this.citizens = citizens;
     }
 }

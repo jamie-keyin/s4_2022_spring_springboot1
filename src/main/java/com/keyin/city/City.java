@@ -1,12 +1,14 @@
 package com.keyin.city;
 
+import com.keyin.airport.Airport;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class City {
     @Id
-    @SequenceGenerator(name = "city_sequence", sequenceName = "city_sequence", allocationSize = 1, initialValue=10)
+    @SequenceGenerator(name = "city_sequence", sequenceName = "city_sequence", allocationSize = 1, initialValue=1)
     @GeneratedValue(generator = "city_sequence")
     private long id;
 
@@ -17,6 +19,9 @@ public class City {
 
     @ManyToMany
     private List<Citizen> citizens;
+
+    @OneToMany
+    private List<Airport> airports;
 
     public City() {
     }
@@ -51,5 +56,13 @@ public class City {
 
     public void setCitizens(List<Citizen> citizens) {
         this.citizens = citizens;
+    }
+
+    public List<Airport> getAirports() {
+        return airports;
+    }
+
+    public void setAirports(List<Airport> airports) {
+        this.airports = airports;
     }
 }

@@ -19,6 +19,11 @@ public class CityController {
         return (List<City>) repo.findAll();
     }
 
+    @GetMapping("/cities/citizen_search")
+    public List<City> getAllCities(@RequestParam String citizenName) {
+        return (List<City>) repo.findByCitizens_Name(citizenName);
+    }
+
     @PostMapping("/city")
     public void createCity(@RequestBody City city) {
         repo.save(city);

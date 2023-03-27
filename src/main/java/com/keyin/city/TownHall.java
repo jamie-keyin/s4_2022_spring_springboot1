@@ -8,7 +8,7 @@ import javax.persistence.SequenceGenerator;
 @Entity
 public class TownHall {
     @Id
-    @SequenceGenerator(name = "town_hall_sequence", sequenceName = "town_hall_sequence", allocationSize = 1, initialValue=1)
+    @SequenceGenerator(name = "town_hall_sequence", sequenceName = "town_hall_sequence", allocationSize = 1, initialValue=2)
     @GeneratedValue(generator = "town_hall_sequence")
     private long id;
 

@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 public class Airport {
     @Id
-    @SequenceGenerator(name = "airport_sequence", sequenceName = "airport_sequence", allocationSize = 1, initialValue=1)
+    @SequenceGenerator(name = "airport_sequence", sequenceName = "airport_sequence", allocationSize = 1, initialValue=2)
     @GeneratedValue(generator = "airport_sequence")
     private long id;
     private String name;

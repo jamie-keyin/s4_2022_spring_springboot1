@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 public class City {
     @Id
-    @SequenceGenerator(name = "city_sequence", sequenceName = "city_sequence", allocationSize = 1, initialValue=1)
+    @SequenceGenerator(name = "city_sequence", sequenceName = "city_sequence", allocationSize = 1, initialValue=2)
     @GeneratedValue(generator = "city_sequence")
     private long id;
 

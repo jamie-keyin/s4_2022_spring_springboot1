@@ -1,6 +1,16 @@
 package com.keyin.aircraft;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+@Entity
 public class Aircraft {
+
+    @Id
+    @SequenceGenerator(name = "aircraft_sequence", sequenceName = "aircraft_sequence", allocationSize = 1, initialValue=1)
+    @GeneratedValue(generator = "aircraft_sequence")
     private int id;
     private String tailNumber;
     private String type;

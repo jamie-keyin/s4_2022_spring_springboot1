@@ -1,9 +1,7 @@
 package com.keyin.aircraft;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,5 +13,15 @@ public class AircraftController {
     @GetMapping("/aircraft")
     public List<Aircraft> getAllAircraft() {
         return aircraftService.getAllAircraft();
+    }
+
+    @GetMapping("/aircraft_db")
+    public List<Aircraft> getAllAircraftFromDB() {
+        return aircraftService.getAllAircraftFromDB();
+    }
+
+    @PostMapping("aircraft_db")
+    public Aircraft createNewAircraft(@RequestBody Aircraft aircraft) {
+        return aircraftService.createAircraft(aircraft);
     }
 }

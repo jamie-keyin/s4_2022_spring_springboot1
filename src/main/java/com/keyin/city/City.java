@@ -1,6 +1,6 @@
 package com.keyin.city;
 
-import com.keyin.airport.Airport;
+import com.keyin.citizen.Citizen;
 
 import javax.persistence.*;
 import java.util.List;
@@ -20,8 +20,8 @@ public class City {
     @ManyToMany
     private List<Citizen> citizens;
 
-    @OneToMany
-    private List<Airport> airports;
+//    @OneToMany
+//    private List<Airport> airports;
 
     public City() {
     }
@@ -58,11 +58,11 @@ public class City {
         this.citizens = citizens;
     }
 
-    public List<Airport> getAirports() {
-        return airports;
-    }
-
-    public void setAirports(List<Airport> airports) {
-        this.airports = airports;
-    }
+//    public List<Airport> getAirports() {
+//        return airports;
+//    }
+//
+//    public void setAirports(List<Airport> airports) {
+//        this.airports = airports;
+//    }
 }

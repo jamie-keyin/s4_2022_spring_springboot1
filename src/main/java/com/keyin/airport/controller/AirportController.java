@@ -1,7 +1,6 @@
-package com.keyin.airport;
+package com.keyin.airport.controller;
 
-import com.keyin.city.City;
-import com.keyin.city.CityRepository;
+import com.keyin.airport.Airport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

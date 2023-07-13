@@ -1,5 +1,6 @@
-package com.keyin.aircraft;
+package com.keyin.aircraft.controller;
 
+import com.keyin.aircraft.Aircraft;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

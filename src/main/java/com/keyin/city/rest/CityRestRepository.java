@@ -1,5 +1,6 @@
-package com.keyin.city;
+package com.keyin.city.rest;
 
+import com.keyin.city.City;
 import com.keyin.rest.domain.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
@@ -11,5 +12,5 @@ import java.util.List;
 public interface CityRestRepository extends JpaRepository<City, Long> {
     public List<City> findByName(@Param("name")String name);
 
-    public List<City> findByAirports_code(@Param("code")String code);
+//    public List<City> findByAirports_code(@Param("code")String code);
 }

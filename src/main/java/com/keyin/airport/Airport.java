@@ -13,6 +13,9 @@ public class Airport {
     private String name;
     private String code;
 
+    @OneToOne
+    private City city;
+
     public long getId() {
         return id;
     }
@@ -35,5 +38,13 @@ public class Airport {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
     }
 }

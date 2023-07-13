@@ -1,4 +1,4 @@
-package com.keyin.city;
+package com.keyin.citizen;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

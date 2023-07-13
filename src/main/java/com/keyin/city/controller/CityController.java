@@ -1,11 +1,11 @@
-package com.keyin.city;
+package com.keyin.city.controller;
 
+import com.keyin.city.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
 

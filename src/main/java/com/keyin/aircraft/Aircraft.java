@@ -1,9 +1,9 @@
 package com.keyin.aircraft;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import com.keyin.airport.Airport;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Aircraft {
@@ -11,17 +11,20 @@ public class Aircraft {
     @Id
     @SequenceGenerator(name = "aircraft_sequence", sequenceName = "aircraft_sequence", allocationSize = 1, initialValue=1)
     @GeneratedValue(generator = "aircraft_sequence")
-    private int id;
+    private long id;
     private String tailNumber;
     private String type;
     private String brand;
     private String model;
 
-    public int getId() {
+    @ManyToMany
+    private List<Airport> airports;
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -55,5 +58,13 @@ public class Aircraft {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public List<Airport> getAirports() {
+        return airports;
+    }
+
+    public void setAirports(List<Airport> airports) {
+        this.airports = airports;
     }
 }
